@@ -26,8 +26,8 @@
             <a class="brand" href="{% url index %}">{{ site.name }}</a>
             <ul class="nav">
                 <li class="active"><a href="{% url index %}">{% trans "Home" %}</a></li>
-                <li><a href="{% url index %}#about">{% trans "About" %}</a></li>
-                <li><a href="{% url index %}#contact">{% trans "Contact" %}</a></li>
+                <li><a href="http://www.amazingworks.com.br">{% trans "About" %}</a></li>
+                <li><a href="mailto:ebertti@gmail.com">{% trans "Contact" %}</a></li>
             </ul>
             {% if user.is_authenticated %}
                 <p class="pull-right">
