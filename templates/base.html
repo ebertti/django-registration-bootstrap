@@ -1,0 +1,66 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ site.name }}</title>
+    <meta name="description" content="Sample using Bootstrap from Twitter with django-registration">
+    <meta name="author" content="Ezequiel Bertti">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <!--
+        Sample create using as base http://twitter.github.com/bootstrap/examples/container-app.html
+    -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+    <link href="{{ MEDIA_URL }}css/bootstrap.css" rel="stylesheet">
+    <link href="{{ MEDIA_URL }}css/registration.css" rel="stylesheet">
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/bootstrap-alerts.js"></script>
+</head>
+<body>
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="{% url index %}">{{ site.name }}</a>
+            <ul class="nav">
+                <li class="active"><a href="{% url index %}">{% trans "Home" %}</a></li>
+                <li><a href="{% url index %}#about">{% trans "About" %}</a></li>
+                <li><a href="{% url index %}#contact">{% trans "Contact" %}</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+                <p class="pull-right">
+                    {% trans 'Hello' %} {{ user.username }}, <a href="{% url django.contrib.auth.views.logout %}">{% trans 'Leave' %}</a>
+                </p>
+            {% else %}
+                <form action="{% url django.contrib.auth.views.login %}" method="post" class="pull-right">
+                    {% csrf_token %}
+                    <input class="input-small" name="username" id="id_username" type="text" placeholder="{% trans 'Username' %}">
+                    <input class="input-small" name="password" id="id_password" type="password" placeholder="{% trans 'Password' %}">
+                    <button class="btn" type="submit">{% trans 'Log in' %}</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="container">
+    {% block container %}
+        <div class="content">
+            <div class="page-header">
+                <h1>{{ site.name }} <small>{% trans "Sample using Bootstrap from Twitter with django-registration" %}</small></h1>
+            </div>
+            <ul>
+                <li><a href="{% url django.contrib.auth.views.login %}">{% trans "Log in" %}</a></li>
+                <li><a href="{% url django.contrib.auth.views.logout %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url django.contrib.auth.views.password_change %}">{% trans "Change password" %}</a></li>
+                <li><a href="{% url django.contrib.auth.views.password_reset %}">{% trans "Reset my password" %}</a></li>
+            </ul>
+        </div>
+    {% endblock %}
+    <footer>
+        <p>By <a href="mailto:ebertti@gmail.com">Ezequiel Bertti</a> &copy; <a href='http://www.amazingworks.com.br'>AmazingWorks</a> 2011</p>
+    </footer>
+</div>
+</body>
+</html>

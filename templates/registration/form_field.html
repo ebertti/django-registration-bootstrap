@@ -1,0 +1,10 @@
+<div class="clearfix{% if field.errors %} error{% endif %}">
+    {{ field.label_tag }}
+    <div class="input">
+        {{ field }}
+        {% if field.errors %}
+            <span class='help-inline'>{{ field.errors|join:'<br />' }}</span>
+        {% endif %}
+        <span class="help-block">{{ field.help_text }}</span>
+    </div>
+</div>
