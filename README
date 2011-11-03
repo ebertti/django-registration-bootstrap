@@ -1,2 +1,6 @@
-<h1>Django Registration Bootstrap</h1>
-<h2>Simples sample using bootstrap from twitter in forms of Django</h2>
+#Django Registration Bootstrap
+##Simple sample using bootstrap from twitter in forms of Django
+
+To run, just download and do runserver:
+
+`manager.py runserver 8000`
