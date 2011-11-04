@@ -7,11 +7,6 @@
             <div class="alert-message error fade in">
                 <a class="close" href="#">×</a>
                 <p><strong>{% trans "Oh snap!" %}</strong> {% trans "Please enter a correct username and password. Note that both fields are case-sensitive." %}</p>
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                        $(".alert-message").alert();
-                    });
-                </script>
             </div>
         {% endif %}
         <form action="{% url django.contrib.auth.views.login %}" method="post" id="login-form">{% csrf_token %}
@@ -27,6 +22,12 @@
         </form>
         <p><a href="{% url django.contrib.auth.views.password_reset %}">{% trans "Reset my password" %}</a></p>
         <script type="text/javascript">
+            $(function(){
+                $(".alert-message").alert();
+                $('#mainForm').submit(function(){
+                    $('#submit').button('loading');
+                })
+            });
             document.forms[1].elements[2].focus();
         </script>
     </div>
