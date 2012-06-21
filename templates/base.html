@@ -1,52 +1,63 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>{{ site.name }}</title>
-    <meta name="description" content="Sample using Bootstrap from Twitter with django-registration">
-    <meta name="author" content="Ezequiel Bertti">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <!--
-        Sample create using as base http://twitter.github.com/bootstrap/examples/container-app.html
-        Version 0.2 using bootstrap v1.4
-    -->
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <!-- Le styles -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
     <link href="{{ MEDIA_URL }}css/bootstrap.css" rel="stylesheet">
-    <link href="{{ MEDIA_URL }}css/registration.css" rel="stylesheet">
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/bootstrap-alerts.js"></script>
-    <script type="text/javascript" src="{{ MEDIA_URL }}js/bootstrap-buttons.js"></script>
-</head>
-<body>
-<div class="topbar">
-    <div class="fill">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="{{ MEDIA_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="{% url index %}">{{ site.name }}</a>
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="{% url index %}">{{ site.name }}</a>
+          <div class="nav-collapse">
             <ul class="nav">
-                <li class="active"><a href="{% url index %}">{% trans "Home" %}</a></li>
-                <li><a href="http://www.amazingworks.com.br">{% trans "About" %}</a></li>
-                <li><a href="mailto:ebertti@gmail.com">{% trans "Contact" %}</a></li>
+              <li class="active"><a href="{% url index %}">{% trans "Home" %}</a></li>
+              <li><a href="http://www.amazingworks.com.br">{% trans "About" %}</a></li>
+              <li><a href="mailto:ebertti@gmail.com">{% trans "Contact" %}</a></li>
             </ul>
             {% if user.is_authenticated %}
-                <p class="pull-right">
-                    {% trans 'Hello' %} {{ user.username }}, <a href="{% url django.contrib.auth.views.logout %}">{% trans 'Leave' %}</a>
-                </p>
+                <ul class="nav pull-right">
+                <span class="label label-inverse">{% trans 'Hello' %} {{ user.username }},</span>
+                <li class="divider-vertical"></li>
+                <a href="{% url django.contrib.auth.views.password_change %}">{% trans "Change password" %}</a>
+                <a class="btn btn-inverse" href="{% url django.contrib.auth.views.logout %}">{% trans 'Leave' %}</a>
+                </ul>
+
             {% else %}
-                <form action="{% url django.contrib.auth.views.login %}" method="post" class="pull-right">
-                    {% csrf_token %}
-                    <input class="input-small" name="username" id="id_username" type="text" placeholder="{% trans 'Username' %}">
-                    <input class="input-small" name="password" id="id_password" type="password" placeholder="{% trans 'Password' %}">
-                    <button class="btn" type="submit">{% trans 'Log in' %}</button>
-                </form>
+            <form class="form-inline pull-right" style="margin: 0;" action="{% url django.contrib.auth.views.login %}" method="post">
+            {% csrf_token %}
+            <input class="input-small" name="username" id="id_username" type="text" placeholder="{% trans 'Username' %}">
+            <input class="input-small" name="password" id="id_password" type="password" placeholder="{% trans 'Password' %}">
+            <button class="btn" type="submit">{% trans 'Log in' %}</button>
+            </form>
             {% endif %}
+          </div><!--/.nav-collapse -->
         </div>
+      </div>
     </div>
-</div>
-<div class="container">
+
+    <div class="container">
     {% block container %}
         <div class="content">
             <div class="page-header">
@@ -60,9 +71,30 @@
             </ul>
         </div>
     {% endblock %}
+    <hr>
     <footer>
         <p>By <a href="mailto:ebertti@gmail.com">Ezequiel Bertti</a> &copy; <a href='http://www.amazingworks.com.br'>AmazingWorks</a> 2011</p>
     </footer>
-</div>
-</body>
+    </div> <!-- /container -->
+    <!-- <link href="{{ MEDIA_URL }}css/registration.css" rel="stylesheet"> -->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ MEDIA_URL }}js/html5.js"></script>
+    <![endif]-->
+    <script src="{{ MEDIA_URL }}js/jquery.js"></script>
+    <script src="{{ MEDIA_URL }}js/prettify.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-transition.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-alert.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-modal.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-dropdown.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-scrollspy.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-tab.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-tooltip.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-popover.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-button.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-collapse.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-carousel.js"></script>
+    <script src="{{ MEDIA_URL }}js/bootstrap-typeahead.js"></script>
+
+  </body>
 </html>
