@@ -4,7 +4,7 @@ Django Registration Bootstrap
 Simple sample using bootstrap from twitter in forms of Django
 -------------------------------------------------------------
 
-Just update to Bootstrap from Twitter version 1.4
+Just update to Bootstrap from Twitter version 2.0.4
 
 http://twitter.github.com/bootstrap
 

@@ -6,9 +6,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 #settings for registration work
-DEFAULT_FROM_EMAIL = "from@email.com"
-EMAIL_HOST = 'smpt.mail.com'
-EMAIL_HOST_USER = 'user'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'user@gmail.com'
 EMAIL_HOST_PASSWORD = 'pass'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'

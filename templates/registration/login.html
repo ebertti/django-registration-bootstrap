@@ -4,8 +4,8 @@
 {% block container %}
     <div class="content">
         {% if form.errors %}
-            <div class="alert-message error fade in">
-                <a class="close" href="#">×</a>
+            <div class="alert alert-block fade in">
+                <a class="close" data-dismiss="alert" href="#">×</a>
                 <p><strong>{% trans "Oh snap!" %}</strong> {% trans "Please enter a correct username and password. Note that both fields are case-sensitive." %}</p>
             </div>
         {% endif %}
