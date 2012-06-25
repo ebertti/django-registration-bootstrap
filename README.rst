@@ -5,6 +5,7 @@ Simple sample using bootstrap from twitter in forms of Django
 -------------------------------------------------------------
 
 Just update to Bootstrap from Twitter version 2.0.4
+Thanks for gladson (https://github.com/gladson)
 
 http://twitter.github.com/bootstrap
 
