@@ -17,6 +17,21 @@ To run, just download and do runserver:
 username: demo
 password: demo
 
+Screenshots
+-----------
+![home](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/home_pt.png)
+
+![login](https://github.com/ebertti/django-registration-bootstrap/blob/master/screenshot/loggin_pt.png)
+![login error](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/loggin_error_pt.png)
+
+![password change](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/password_change_pt.png)
+![password change](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/password_change_error_pt.png)
+
+![home](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/password_reset_pt.png)
+![home](https://raw.github.com/ebertti/django-registration-bootstrap/master/screenshot/password_reset_error_pt.png)
+
+
+
 Changelog
 ---------
 
