@@ -1,8 +1,6 @@
 # Django Registration Bootstrap
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ebertti/django-registration-bootstrap/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-##Simple sample using bootstrap from twitter in forms of Django
+## Simple sample using bootstrap from twitter in forms of Django
 
 Using Bootstrap from Twitter version 3.0.3
 
@@ -15,8 +13,8 @@ To run, just download and do runserver:
     python manage.py runserver 8000
 ```
 
-username: demo
-password: demo
+* username: demo
+* password: demo
 
 # Screenshots
 
